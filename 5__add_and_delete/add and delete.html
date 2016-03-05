@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add and delete</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	#imn2{
+		margin-right: 20px;
+	}
+	#box{
+		width: 300px;
+		height: 300px;
+		border: solid 1px black;
+		padding-left: 20px;
+	}
+	</style>
+</head>
+<body>
+	<div id = "box">
+		<input v-model="addtxt">
+		<button v-on:click = "addone">追加</button>
+		<button v-on:click = "delAll">全部消除</button>
+		</br>
+			<ul>
+				<li v-for = "txt in txts">
+					<span>{{txt.text}}</span>
+					<button v-on:click = "deltxt($index)" id = "min2">消除</button>
+				</li>
+			</ul>
+	</div>
+<script src="http://cdn.bootcss.com/vue/1.0.15/vue.min.js"></script>
+<script type="text/javascript">
+ 	 new Vue({
+ 		el:'#box',
+ 		data:{
+ 			addtxt:'',
+ 			txts:[{text:''}]
+ 		},
+ 		methods:{
+ 			addone:function(){
+ 				var text = this.addtxt.trim()
+ 				if(text){
+ 					this.txts.push({text:text})
+ 					this.addtxt = ""
+ 				}
+ 			},
+ 			delAll:function( ){
+ 				 this.txts = [];
+ 			},
+ 			deltxt:function(index){
+ 				this.txts.splice(index,1)
+ 			}
+ 		}
+ 	})
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset=UTF-8>
+<title>xuanzhuan button</title>
+
+<style type="text/css">
+	#box{}
+	*{margin:0;padding:0;}
+	.btn{
+			width:500px;
+			height:500px;
+			margin:0 auto;
+			margin-top:300px;
+			background-color:white;
+		}
+	.target{
+			width:302px;
+			height:101px;
+			position:absolute;
+			cursor:pointer;
+			transition: all 1s;
+		}
+	.target.rotate{
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+	.target.left{
+			-webkit-transform: translateX(-100px);
+			-ms-transform: translateX(-100px);
+			-o-transform: translateX(-100px);
+			transform: translateX(-100px);
+		}
+	.target.rotate.left{
+			-webkit-transform: translateX(-100px) rotate(45deg);
+			-ms-transform: translateX(-100px) rotate(45deg);
+			-o-transform: translateX(-100px) rotate(45deg);
+			transform: translateX(-100px) rotate(45deg);
+		}
+</style>
+
+</head>
+<body>
+	
+	<div class="btn">
+	<img class="target" src="images/an.png" />
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var a = $('.target');
+			//class包含target的所有元素，点击之后运行以下函数
+			a.click(function(){
+				//把当前被点击的元素赋值给target
+   				var target = $(this);
+   				//给当前被点击的元素增加一个rotate的class
+   					target.addClass("rotate");
+   					//延迟1000ms执行下面这个一函数
+   				setTimeout(function () {
+   					//给当前被点击的元素再增加一个left的class
+   					target.addClass("left");
+   				}, 1000);
+   				//当前被点击的元素有left的class跟rotate的class的时候，赋值true给isMoved,其他情况把flase赋值给isMoved
+   				var isMoved = target.hasClass("left") && target.hasClass("rotate");
+   				//如果isMoved这个元素为flase的时候
+   				if(!isMoved){
+   					//不操作
+					}else{
+	//如果已经移动过这时候 target 已经有rotate 和 left class了
+	//否则，当前被点击的元素移除rotate的class
+					target.removeClass("rotate");
+					//当前被点击的元素在1000ms后移除left class
+					setTimeout(function(){ target.removeClass("left");},1000);
+					}
+   			});
+   		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+	<title>导航</title>
+<style type="text/css">
+*{
+	margin: 0px;
+	padding: 0px;
+	
+}	
+.box{
+	height: 30px;
+	font-family: arial, sans-serif;
+	position:relative;
+}
+.box ul{
+	list-style-type: none;
+}
+.box ul  li a{ 
+	display: block; 
+	text-decoration: none; 
+	color: #000;
+	width: 104px; 
+	height: 30px; 
+	text-align: center; 
+	color: #fff; 
+	border: 1px solid #fff; 
+	background: #710069; 
+	line-height: 20px; 
+	font-size: 11px; 
+	overflow: hidden;
+}
+.box ul li {
+	float: left; 
+	margin-right: 1px; 
+	position: relative;
+}
+.box ul li ul {
+	display: none;
+}
+.box ul li:hover a {
+	color: #fff; 
+	background: #36f;
+}
+.box ul li:hover ul {
+	display: block; 
+	position: absolute; 
+	top: 30px; 
+	left: 0px; 
+	width: 105px;
+	}
+.box ul li:hover ul li a.hide {
+	background: #6a3; 
+	color: #fff;
+	}
+.box ul li:hover ul li:hover a.hide {
+	background: #6fc; 
+	color: #000;
+	}
+.box ul li:hover ul li ul {
+	display: none;
+	}
+.box ul li:hover ul li a {
+	display: block; 
+	background: #ddd; 
+	color: #000;
+	}
+.box ul li:hover ul li a:hover {
+	background: #6fc; 
+	color: #000;
+	}
+.box ul li:hover ul li:hover ul {
+	display: block; 
+	position: absolute; 
+	left:105px; top:0;
+	}
+.box ul li:hover ul li:hover ul.left {
+	left: -105px;
+	}
+</style>
+</head>
+<body>
+<div class=box>
+	<ul>
+		<li><a href="#">Home</a>
+		</li>
+		<li><a href="#">Products</a>
+			<ul>
+				<li><a href="#">Best seller</a>
+					<ul>
+						<li><a href="#">Three blocks</a></li>
+						<li><a href="#">Titan</a></li>
+						<li><a href="#">Shadow</a></li>
+						<li><a href="#">Warm home</a></li>
+						<li><a href="#">Future</a></li>
+						<li><a href="#">Spring</a></li>
+					</ul>						
+				</li>
+				<li><a href="#">New products</a>
+					<ul>
+						<li><a href="#">Burning</a></li>
+						<li><a href="#">Flying</a></li>
+						<li><a href="#">Blessing</a></li>
+						<li><a href="#">Heart</a></li>
+						<li><a href="#">Love</a></li>
+					</ul>
+				</li>	
+				<li><a href="#">Sales promotion</a>
+					<ul>
+						<li><a href="#">Six blocks</a></li>
+						<li><a href="#">Phoniex</a></li>
+						<li><a href="#">LGD</a></li>
+						<li><a href="#">Gaming</a></li>
+						<li><a href="#">Professional</a></li>
+						<li><a href="#">Training</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li><a href="#">Product profile</a>
+			<ul>
+				<li><a href="#">All catages</a></li>
+				<li><a href="#">Steel door</a>
+					<ul>
+						<li><a href="#">40mm door</a></li>
+						<li><a href="#">50mm door</a></li>
+						<li><a href="#">60mm door</a></li>
+						<li><a href="#">70mm door</a></li>
+						<li><a href="#">90mm door</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Security door</a>
+					<ul>
+						<li><a href="#">A level</a></li>
+						<li><a href="#">B level</a></li>
+						<li><a href="#">C level</a></li>
+						<li><a href="#">D level</a></li>
+						<li><a href="#">Others</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Wooden door</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Company profile</a>
+			<ul>
+				<li><a href="#">Overview</a></li>
+				<li><a href="#">Certification</a></li>
+				<li><a href="#">Capability</a></li>
+				<li><a href="#">Performance</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Contacts</a>
+			<ul>
+				<li><a href="#">第二级</a></li>
+				<li><a href="#">第二级</a></li>				
+			</ul>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu</title>
+</head>
+<style type="text/css">
+	*{		background-color: #FC9;
+			margin: 0;
+			padding: 0;
+		}
+	b{
+		    color:#969;
+			font-size:30px;
+			background-color:white;
+			line-height:80px;
+		}	
+	h2{ 
+			background-color:white;
+			text-align:center;
+		}
+	.box{	width: 400px;
+			height: 600px;
+			margin: 150px auto;
+			padding-top: 10px;
+			border-radius: 8px;			
+			background-color: white;
+			overflow: hidden;
+		}
+	.box.box1{	width: 400px;
+			height: 600px;
+			margin: 150px auto;
+			padding-top: 0px;
+			border-radius: 8px;
+			background-color: #CCC;
+			transition: all 400ms;
+		}
+	.block{ width: 360px;
+			height: 200px;
+			margin: 380px 20px 20px 20px;
+			border-radius: 8px;
+			background-color: #0CF;
+			position: absolute;
+			overflow: hidden;
+			z-index: 1;
+		}
+	.show{	width: 260px;
+			height: 150px;
+			margin-top: 20px;
+			margin-left: 70px;
+			background-color: white;
+			position: absolute;
+			overflow: hidden;
+			text-align:center;
+			font-size: 26px;
+		}
+	.show.hide{
+				height: 0px;
+		}	
+	.line{	
+			width: 45px;
+			height: 0px;
+			margin: 5px;
+			margin-left: 20px;
+			border-bottom: 4px solid #666;
+			cursor: pointer;
+			overflow: hidden;
+		}
+	.line.clicked1{	
+			width: 400px;
+			height: 0px;
+			margin: 5px;
+			margin-left: 0px;
+			background-color: white;
+			border-bottom:4px solid #666;
+			transition: all 400ms;
+		} 
+	.line.clicked1.clicked2{
+			width: 400px;
+			height: 88px;
+			margin: 0px;
+			background-color: white;
+			border-bottom:4px solid #666;
+			transition: all 400ms;
+		}	
+</style>
+<body>
+<div class=box>
+	<div class=block></div>
+	<div class=line>
+		<b>&nbsp;Home</b>
+	</div>
+	<div class=line>
+		<b>&nbsp;Source of inspiration</b>
+	</div>
+	<div class=line>
+		<b>&nbsp;Other demos</b>
+	</div>
+	<div class=line>
+		<b>&nbsp;About</b>
+	</div>
+	<div class="show hide">
+		<P><h2>HOME</h2></b>Just click the menu buttom</P>
+	</div>
+	<div class="show hide">
+		<P><h2>SOURCE OF INSPIRATION</h2></b>Based on this dribbble shot by Gal Shir</P>
+	</div>
+	<div class="show hide">
+		<P><h2>OTHER DEMOS</h2></b>Check my other demos</P>
+	</div>
+	<div class="show hide">
+		<P><h2>ABOUT</h2></b>My twitter</P>
+	</div>
+</div>
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var a = $('.line');
+			//赋值 a 为 含有 line class 的所有元素
+			var b = $('.box');
+			//赋值 b 为 含有　box class 的所有元素
+			a.click(function(){
+   					var self = this;
+   				var isMoved = a.hasClass("clicked1") && a.hasClass("clicked2");
+   				if(!isMoved){
+   					a.addClass("clicked1");
+	   				setTimeout(function () {
+	   					a.addClass("clicked2");
+	   					b.addClass("box1");
+	   				}, 500);
+					}else{
+						a.removeClass("clicked2");
+					setTimeout(function(){ 
+						a.removeClass("clicked1");
+						b.removeClass("box1");
+						var arr = $(".line"); 
+						for(var i in arr){
+							if(arr[i]==self){
+							$(".show")[i].classList.remove("hide");}
+						}
+						},500);
+					}
+					
+   			});
+   		});
+	</script>
+</body>
+</html>
